@@ -7,9 +7,9 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class SMItemTagsProvider extends ItemTagsProvider {
+public class GlowwormsItemTagsProvider extends ItemTagsProvider {
 
-    public SMItemTagsProvider(DataGenerator generator, BlockTagsProvider provider, @Nullable ExistingFileHelper existingFileHelper) {
+    public GlowwormsItemTagsProvider(DataGenerator generator, BlockTagsProvider provider, @Nullable ExistingFileHelper existingFileHelper) {
         super(generator, provider, Glowworms.MOD_ID, existingFileHelper);
     }
 

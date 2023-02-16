@@ -8,7 +8,7 @@ import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @SuppressWarnings("unused")
-public class SMDatagenUtil {
+public class GlowwormsDatagenUtil {
     public static final String LAYER0 = "layer0";
     public static final String GENERATED = "item/generated";
     public static final String HANDHELD = "item/handheld";

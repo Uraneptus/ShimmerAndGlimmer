@@ -9,8 +9,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.util.function.Supplier;
 
 @SuppressWarnings("SameParameterValue")
-public class SMBlockStateProvider extends BlockStateProvider {
-    public SMBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
+public class GlowwormsBlockStateProvider extends BlockStateProvider {
+    public GlowwormsBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, Glowworms.MOD_ID, exFileHelper);
     }
 

@@ -4,9 +4,9 @@ import com.uraneptus.glowworms.Glowworms;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
-public class SMLangProvider extends LanguageProvider {
+public class GlowwormsLangProvider extends LanguageProvider {
 
-    public SMLangProvider(DataGenerator gen) {
+    public GlowwormsLangProvider(DataGenerator gen) {
         super(gen, Glowworms.MOD_ID, "en_us");
     }
 

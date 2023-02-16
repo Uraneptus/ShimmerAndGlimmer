@@ -9,12 +9,12 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.function.Supplier;
 
-import static com.uraneptus.glowworms.core.data.SMDatagenUtil.*;
+import static com.uraneptus.glowworms.core.data.GlowwormsDatagenUtil.*;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
-public class SMItemModelProvider extends ItemModelProvider {
+public class GlowwormsItemModelProvider extends ItemModelProvider {
 
-    public SMItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+    public GlowwormsItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, Glowworms.MOD_ID, existingFileHelper);
     }
 

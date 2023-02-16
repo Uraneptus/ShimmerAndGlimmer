@@ -4,7 +4,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 @SuppressWarnings("unused")
-public class SMProperties {
+public class GlowwormsProperties {
 
     public static final class Blocks {
 

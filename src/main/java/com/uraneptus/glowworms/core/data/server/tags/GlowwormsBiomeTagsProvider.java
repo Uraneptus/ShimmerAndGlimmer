@@ -6,8 +6,8 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class SMBiomeTagsProvider extends BiomeTagsProvider {
-    public SMBiomeTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper fileHelper) {
+public class GlowwormsBiomeTagsProvider extends BiomeTagsProvider {
+    public GlowwormsBiomeTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper fileHelper) {
         super(generator, Glowworms.MOD_ID, fileHelper);
     }
 

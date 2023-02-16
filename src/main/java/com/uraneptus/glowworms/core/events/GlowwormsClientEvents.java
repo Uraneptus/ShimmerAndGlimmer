@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @SuppressWarnings("deprecation")
 @Mod.EventBusSubscriber(modid = Glowworms.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class SMClientEvents {
+public class GlowwormsClientEvents {
 
 
 }

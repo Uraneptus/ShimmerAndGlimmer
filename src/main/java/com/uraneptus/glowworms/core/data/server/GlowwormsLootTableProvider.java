@@ -2,7 +2,7 @@ package com.uraneptus.glowworms.core.data.server;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import com.uraneptus.glowworms.core.registry.SMBlocks;
+import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
@@ -20,10 +20,10 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class SMLootTableProvider extends LootTableProvider {
+public class GlowwormsLootTableProvider extends LootTableProvider {
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> lootTables = ImmutableList.of(Pair.of(SMBlockLoot::new, LootContextParamSets.BLOCK));
 
-    public SMLootTableProvider(DataGenerator pGenerator) {
+    public GlowwormsLootTableProvider(DataGenerator pGenerator) {
         super(pGenerator);
     }
 
@@ -44,7 +44,7 @@ public class SMLootTableProvider extends LootTableProvider {
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-            return SMBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+            return GlowwormsBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
         }
     }
 }

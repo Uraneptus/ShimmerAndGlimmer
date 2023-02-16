@@ -7,9 +7,9 @@ import net.minecraft.data.recipes.RecipeProvider;
 import java.util.function.Consumer;
 
 @SuppressWarnings("SameParameterValue")
-public class SMRecipeProvider extends RecipeProvider {
+public class GlowwormsRecipeProvider extends RecipeProvider {
 
-    public SMRecipeProvider(DataGenerator pGenerator) {
+    public GlowwormsRecipeProvider(DataGenerator pGenerator) {
         super(pGenerator);
     }
 

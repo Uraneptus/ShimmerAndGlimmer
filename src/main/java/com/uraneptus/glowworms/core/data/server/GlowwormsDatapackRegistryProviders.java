@@ -5,7 +5,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.RegistryOps;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class SMDatapackRegistryProviders {
+public class GlowwormsDatapackRegistryProviders {
     //Static Things
 
     public static void registerDatapackProviders(ExistingFileHelper fileHelper, DataGenerator generator, RegistryOps<JsonElement> registryOps){

@@ -3,8 +3,8 @@ package com.uraneptus.glowworms;
 import com.google.gson.JsonElement;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.JsonOps;
-import com.uraneptus.glowworms.core.registry.SMBlocks;
-import com.uraneptus.glowworms.core.registry.SMItems;
+import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
+import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.RegistryOps;
@@ -34,8 +34,8 @@ public class Glowworms {
         bus.addListener(this::setup);
         bus.addListener(this::gatherData);
 
-        SMBlocks.BLOCKS.register(bus);
-        SMItems.ITEMS.register(bus);
+        GlowwormsBlocks.BLOCKS.register(bus);
+        GlowwormsItems.ITEMS.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

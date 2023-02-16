@@ -6,9 +6,9 @@ import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class SMBlockTagsProvider extends BlockTagsProvider {
+public class GlowwormsBlockTagsProvider extends BlockTagsProvider {
 
-    public SMBlockTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
+    public GlowwormsBlockTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
         super(generator, Glowworms.MOD_ID, existingFileHelper);
     }
 
