@@ -1,6 +1,7 @@
 package com.uraneptus.glowworms.core.data.client;
 
-import com.uraneptus.glowworms.Glowworms;
+import com.uraneptus.glowworms.GlowwormsMod;
+import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -15,12 +16,12 @@ import static com.uraneptus.glowworms.core.data.GlowwormsDatagenUtil.*;
 public class GlowwormsItemModelProvider extends ItemModelProvider {
 
     public GlowwormsItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Glowworms.MOD_ID, existingFileHelper);
+        super(generator, GlowwormsMod.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-
+        blockItemWithBlockTexture(GlowwormsBlocks.GLOWWORMS);
     }
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {

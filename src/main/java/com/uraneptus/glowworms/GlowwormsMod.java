@@ -3,6 +3,9 @@ package com.uraneptus.glowworms;
 import com.google.gson.JsonElement;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.JsonOps;
+import com.uraneptus.glowworms.core.data.client.GlowwormsBlockStateProvider;
+import com.uraneptus.glowworms.core.data.client.GlowwormsItemModelProvider;
+import com.uraneptus.glowworms.core.data.client.GlowwormsLangProvider;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import net.minecraft.core.RegistryAccess;
@@ -19,17 +22,17 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(Glowworms.MOD_ID)
-@Mod.EventBusSubscriber(modid = Glowworms.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Glowworms {
+@Mod(GlowwormsMod.MOD_ID)
+@Mod.EventBusSubscriber(modid = GlowwormsMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class GlowwormsMod {
     public static final String MOD_ID = "glowworms";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public static ResourceLocation modPrefix(String path) {
-        return new ResourceLocation(Glowworms.MOD_ID, path);
+        return new ResourceLocation(GlowwormsMod.MOD_ID, path);
     }
 
-    public Glowworms() {
+    public GlowwormsMod() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
         bus.addListener(this::gatherData);
@@ -52,11 +55,12 @@ public class Glowworms {
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         RegistryAccess registryAccess = RegistryAccess.builtinCopy();
         RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
-/*
-        generator.addProvider(includeClient, new SMBlockStateProvider(generator, fileHelper));
-        generator.addProvider(includeClient, new SMItemModelProvider(generator, fileHelper));
-        generator.addProvider(includeClient, new SMLangProvider(generator));
 
+        generator.addProvider(includeClient, new GlowwormsBlockStateProvider(generator, fileHelper));
+        generator.addProvider(includeClient, new GlowwormsItemModelProvider(generator, fileHelper));
+        generator.addProvider(includeClient, new GlowwormsLangProvider(generator));
+
+/*
         SMBlockTagsProvider blockTagProvider = new SMBlockTagsProvider(generator, fileHelper);
 
         generator.addProvider(includeServer, blockTagProvider);

@@ -1,6 +1,6 @@
 package com.uraneptus.glowworms.core.data;
 
-import com.uraneptus.glowworms.Glowworms;
+import com.uraneptus.glowworms.GlowwormsMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -12,6 +12,7 @@ public class GlowwormsDatagenUtil {
     public static final String LAYER0 = "layer0";
     public static final String GENERATED = "item/generated";
     public static final String HANDHELD = "item/handheld";
+    public static final String CROSS = "cross";
 
     public static String name(Block block) {
         return ForgeRegistries.BLOCKS.getKey(block).getPath();
@@ -22,11 +23,11 @@ public class GlowwormsDatagenUtil {
     }
 
     public static ResourceLocation modBlockLocation(String path) {
-        return Glowworms.modPrefix(ModelProvider.BLOCK_FOLDER + "/" + path);
+        return GlowwormsMod.modPrefix(ModelProvider.BLOCK_FOLDER + "/" + path);
     }
 
     public static ResourceLocation modItemLocation(String path) {
-        return Glowworms.modPrefix(ModelProvider.ITEM_FOLDER + "/" + path);
+        return GlowwormsMod.modPrefix(ModelProvider.ITEM_FOLDER + "/" + path);
     }
 
     public static ResourceLocation vanillaBlockLocation(String path) {
@@ -38,31 +39,31 @@ public class GlowwormsDatagenUtil {
     }
 
     public static ResourceLocation craftingPath(String name) {
-        return Glowworms.modPrefix("crafting/" + name);
+        return GlowwormsMod.modPrefix("crafting/" + name);
     }
 
     public static ResourceLocation smeltingPath(String name) {
-        return Glowworms.modPrefix("smelting/" + name);
+        return GlowwormsMod.modPrefix("smelting/" + name);
     }
 
     public static ResourceLocation blastingPath(String name) {
-        return Glowworms.modPrefix("blasting/" + name);
+        return GlowwormsMod.modPrefix("blasting/" + name);
     }
 
     public static ResourceLocation smokingPath(String name) {
-        return Glowworms.modPrefix("smoking/" + name);
+        return GlowwormsMod.modPrefix("smoking/" + name);
     }
 
     public static ResourceLocation campfire_cookingPath(String name) {
-        return Glowworms.modPrefix("campfire_cooking/" + name);
+        return GlowwormsMod.modPrefix("campfire_cooking/" + name);
     }
 
     public static ResourceLocation stonecuttingPath(String name) {
-        return Glowworms.modPrefix("stonecutting/" + name);
+        return GlowwormsMod.modPrefix("stonecutting/" + name);
     }
 
     public static ResourceLocation smithingPath(String name) {
-        return Glowworms.modPrefix("smithing/" + name);
+        return GlowwormsMod.modPrefix("smithing/" + name);
     }
 
 }

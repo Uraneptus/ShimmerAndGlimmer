@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:tripwire",
+  "textures": {
+    "cross": "glowworms:block/glowworms_plant"
+  }
+}
