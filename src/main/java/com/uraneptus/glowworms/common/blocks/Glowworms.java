@@ -1,5 +1,6 @@
 package com.uraneptus.glowworms.common.blocks;
 
+import com.uraneptus.glowworms.core.other.tags.GlowwormsBlockTags;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import net.minecraft.core.BlockPos;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.GrowingPlantHeadBlock;
@@ -44,6 +46,11 @@ public class Glowworms extends GrowingPlantHeadBlock implements BonemealableBloc
                 pLevel.addParticle(ParticleTypes.DRIPPING_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
             }
         }
+    }
+
+    @Override
+    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+        return pLevel.getBlockState(pPos.above()).is(GlowwormsBlockTags.GLOWWORMS_PLACEABLE);
     }
 
     @Override

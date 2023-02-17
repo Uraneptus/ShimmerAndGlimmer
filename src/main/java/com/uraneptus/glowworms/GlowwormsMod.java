@@ -6,6 +6,8 @@ import com.mojang.serialization.JsonOps;
 import com.uraneptus.glowworms.core.data.client.GlowwormsBlockStateProvider;
 import com.uraneptus.glowworms.core.data.client.GlowwormsItemModelProvider;
 import com.uraneptus.glowworms.core.data.client.GlowwormsLangProvider;
+import com.uraneptus.glowworms.core.data.server.tags.GlowwormsBlockTagsProvider;
+import com.uraneptus.glowworms.core.other.tags.GlowwormsBlockTags;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import net.minecraft.core.RegistryAccess;
@@ -60,10 +62,11 @@ public class GlowwormsMod {
         generator.addProvider(includeClient, new GlowwormsItemModelProvider(generator, fileHelper));
         generator.addProvider(includeClient, new GlowwormsLangProvider(generator));
 
-/*
-        SMBlockTagsProvider blockTagProvider = new SMBlockTagsProvider(generator, fileHelper);
-
+        GlowwormsBlockTagsProvider blockTagProvider = new GlowwormsBlockTagsProvider(generator, fileHelper);
         generator.addProvider(includeServer, blockTagProvider);
+
+/*
+
         generator.addProvider(includeServer, new SMItemTagsProvider(generator, blockTagProvider, fileHelper));
         generator.addProvider(includeServer, new SMBiomeTagsProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SMLootTableProvider(generator));
