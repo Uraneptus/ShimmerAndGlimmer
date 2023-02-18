@@ -10,6 +10,7 @@ import com.uraneptus.glowworms.core.data.server.tags.GlowwormsBlockTagsProvider;
 import com.uraneptus.glowworms.core.other.tags.GlowwormsBlockTags;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
+import com.uraneptus.glowworms.core.registry.GlowwormsParticleTypes;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.RegistryOps;
@@ -41,6 +42,7 @@ public class GlowwormsMod {
 
         GlowwormsBlocks.BLOCKS.register(bus);
         GlowwormsItems.ITEMS.register(bus);
+        GlowwormsParticleTypes.PARTICLES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

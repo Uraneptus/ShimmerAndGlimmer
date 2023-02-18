@@ -10,7 +10,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.network.FriendlyByteBuf;
-
+//TODO This should be only for one face -> the top
 public class DirectionParticleOptions implements ParticleOptions {
     public static final ParticleOptions.Deserializer<DirectionParticleOptions> DESERIALIZER = new ParticleOptions.Deserializer<DirectionParticleOptions>() {
         public DirectionParticleOptions fromCommand(ParticleType<DirectionParticleOptions> particleType, StringReader stringReader) throws CommandSyntaxException {

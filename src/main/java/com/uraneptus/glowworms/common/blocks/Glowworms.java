@@ -3,6 +3,7 @@ package com.uraneptus.glowworms.common.blocks;
 import com.uraneptus.glowworms.core.other.tags.GlowwormsBlockTags;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
+import com.uraneptus.glowworms.core.registry.GlowwormsParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
@@ -43,7 +44,7 @@ public class Glowworms extends GrowingPlantHeadBlock implements BonemealableBloc
                 double d0 = pPos.getX() + pRandom.nextDouble();
                 double d1 = ((float)(pPos.getY() + 1) - 0.6875F);
                 double d2 = pPos.getZ() + pRandom.nextDouble();
-                pLevel.addParticle(ParticleTypes.DRIPPING_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+                pLevel.addParticle(GlowwormsParticleTypes.HANGING_GLOW_GOO.get(), d0, d1, d2, 0.0D, 0.0D, 0.0D);
             }
         }
     }
