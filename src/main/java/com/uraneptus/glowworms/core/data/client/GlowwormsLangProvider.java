@@ -2,7 +2,6 @@ package com.uraneptus.glowworms.core.data.client;
 
 import com.uraneptus.glowworms.GlowwormsMod;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
-import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 

@@ -1,7 +1,6 @@
 package com.uraneptus.glowworms.core.registry;
 
 import com.uraneptus.glowworms.GlowwormsMod;
-import com.uraneptus.glowworms.common.blocks.Glowworms;
 import com.uraneptus.glowworms.core.other.GlowwormsProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

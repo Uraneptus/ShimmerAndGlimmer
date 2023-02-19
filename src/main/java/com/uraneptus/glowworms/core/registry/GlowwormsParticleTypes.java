@@ -1,8 +1,6 @@
 package com.uraneptus.glowworms.core.registry;
 
 import com.uraneptus.glowworms.GlowwormsMod;
-import com.uraneptus.glowworms.common.particletypes.DirectionParticleOptions;
-import com.uraneptus.glowworms.common.particletypes.ParticleWithDirectionType;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +14,6 @@ public class GlowwormsParticleTypes {
 
     public static final RegistryObject<SimpleParticleType> HANGING_GLOW_GOO = PARTICLES.register("hanging_glow_goo", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> FALLING_GLOW_GOO = PARTICLES.register("falling_glow_goo", () -> new SimpleParticleType(false));
-    public static final RegistryObject<ParticleType<DirectionParticleOptions>> LANDING_GLOW_GOO = PARTICLES.register("landing_glow_goo", () -> new ParticleWithDirectionType(false));
+    public static final RegistryObject<SimpleParticleType> LANDING_GLOW_GOO = PARTICLES.register("landing_glow_goo", () -> new SimpleParticleType(false));
 
 }

@@ -7,7 +7,6 @@ import com.uraneptus.glowworms.core.data.client.GlowwormsBlockStateProvider;
 import com.uraneptus.glowworms.core.data.client.GlowwormsItemModelProvider;
 import com.uraneptus.glowworms.core.data.client.GlowwormsLangProvider;
 import com.uraneptus.glowworms.core.data.server.tags.GlowwormsBlockTagsProvider;
-import com.uraneptus.glowworms.core.other.tags.GlowwormsBlockTags;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import com.uraneptus.glowworms.core.registry.GlowwormsParticleTypes;
