@@ -13,11 +13,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class GlowGooLandingParticle extends TextureSheetParticle {
+public class GlowGooLandingParticle extends GlowGooBaseParticle {
 
     public GlowGooLandingParticle(ClientLevel pLevel, double pX, double pY, double pZ) {
         super(pLevel, pX, pY, pZ);
-        this.setSize(0.01F, 0.01F);
         this.lifetime = (int)(28.0D / (Math.random() * 0.8D + 0.2D));
         this.hasPhysics = false;
     }
@@ -60,10 +59,10 @@ public class GlowGooLandingParticle extends TextureSheetParticle {
         }
 
         int light = this.getLightColor(partialTicks);
-        vertexConsumer.vertex((double) vector3f[0].x(), (double) vector3f[0].y(), (double) vector3f[0].z()).uv(this.getU1(), this.getV1()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
-        vertexConsumer.vertex((double) vector3f[1].x(), (double) vector3f[1].y(), (double) vector3f[1].z()).uv(this.getU1(), this.getV0()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
-        vertexConsumer.vertex((double) vector3f[2].x(), (double) vector3f[2].y(), (double) vector3f[2].z()).uv(this.getU0(), this.getV0()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
-        vertexConsumer.vertex((double) vector3f[3].x(), (double) vector3f[3].y(), (double) vector3f[3].z()).uv(this.getU0(), this.getV1()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
+        vertexConsumer.vertex(vector3f[0].x(), vector3f[0].y(), vector3f[0].z()).uv(this.getU1(), this.getV1()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
+        vertexConsumer.vertex(vector3f[1].x(), vector3f[1].y(), vector3f[1].z()).uv(this.getU1(), this.getV0()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
+        vertexConsumer.vertex(vector3f[2].x(), vector3f[2].y(), vector3f[2].z()).uv(this.getU0(), this.getV0()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
+        vertexConsumer.vertex(vector3f[3].x(), vector3f[3].y(), vector3f[3].z()).uv(this.getU0(), this.getV1()).color(this.rCol, this.gCol, this.bCol, this.alpha).uv2(light).endVertex();
     }
 
     @OnlyIn(Dist.CLIENT)

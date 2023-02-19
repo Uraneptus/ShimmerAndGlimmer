@@ -10,11 +10,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class GlowGooBaseParticle extends TextureSheetParticle {
+    protected float colR = 0.20F;
+    protected float colG = 1.00F;
+    protected float colB = 0.87F;
 
     public GlowGooBaseParticle(ClientLevel pLevel, double pX, double pY, double pZ) {
         super(pLevel, pX, pY, pZ);
         this.setSize(0.01F, 0.01F);
-        this.setColor(0.20F, 1.00F, 0.87F);
+        this.setColor(colR, colG, colB);
     }
 
     @Override

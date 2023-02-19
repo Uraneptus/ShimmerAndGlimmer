@@ -5,8 +5,11 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SpriteSet;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -22,11 +25,13 @@ public class GlowGooFallingParticle extends GlowGooBaseParticle {
 
     @Override
     protected void postMoveUpdate() {
-        if (this.onGround) {
-            this.remove();
-            this.level.addParticle(landParticle, this.x, this.y, this.z, 0.0D, 0.0D, 0.0D);
+        if (this.level.getFluidState(new BlockPos(this.x, this.y + 0.2, this.z)).isEmpty()) {
+            FluidState fluidState = this.level.getFluidState(new BlockPos(this.x, this.y - 0.1, this.z));
+            if (fluidState.is(FluidTags.WATER) || this.onGround) {
+                this.remove();
+                this.level.addParticle(landParticle, this.x, this.y, this.z, 0.0D, 0.0D, 0.0D);
+            }
         }
-
     }
 
     @OnlyIn(Dist.CLIENT)
