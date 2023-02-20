@@ -6,6 +6,11 @@ import com.mojang.serialization.JsonOps;
 import com.uraneptus.glowworms.core.data.client.GlowwormsBlockStateProvider;
 import com.uraneptus.glowworms.core.data.client.GlowwormsItemModelProvider;
 import com.uraneptus.glowworms.core.data.client.GlowwormsLangProvider;
+import com.uraneptus.glowworms.core.data.server.GlowwormsLootTableProvider;
+import com.uraneptus.glowworms.core.data.server.datapack_registries.GlowwormsBiomeModifiersProvider;
+import com.uraneptus.glowworms.core.data.server.datapack_registries.GlowwormsConfiguredFeatureProvider;
+import com.uraneptus.glowworms.core.data.server.datapack_registries.GlowwormsPlacedFeaturesProvider;
+import com.uraneptus.glowworms.core.data.server.tags.GlowwormsBiomeTagsProvider;
 import com.uraneptus.glowworms.core.data.server.tags.GlowwormsBlockTagsProvider;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
@@ -56,8 +61,6 @@ public class GlowwormsMod {
         boolean includeServer = event.includeServer();
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-        RegistryAccess registryAccess = RegistryAccess.builtinCopy();
-        RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
 
         generator.addProvider(includeClient, new GlowwormsBlockStateProvider(generator, fileHelper));
         generator.addProvider(includeClient, new GlowwormsItemModelProvider(generator, fileHelper));
@@ -65,12 +68,14 @@ public class GlowwormsMod {
 
         GlowwormsBlockTagsProvider blockTagProvider = new GlowwormsBlockTagsProvider(generator, fileHelper);
         generator.addProvider(includeServer, blockTagProvider);
+        generator.addProvider(includeServer, new GlowwormsBiomeTagsProvider(generator, fileHelper));
+        generator.addProvider(includeServer, new GlowwormsLootTableProvider(generator));
+        generator.addProvider(includeServer, GlowwormsBiomeModifiersProvider.createBiomeModifiers(generator, fileHelper));
+        generator.addProvider(includeServer, GlowwormsConfiguredFeatureProvider.createConfiguredFeatures(generator, fileHelper));
+        generator.addProvider(includeServer, GlowwormsPlacedFeaturesProvider.createPlacedFeatures(generator, fileHelper));
 
 /*
-
         generator.addProvider(includeServer, new SMItemTagsProvider(generator, blockTagProvider, fileHelper));
-        generator.addProvider(includeServer, new SMBiomeTagsProvider(generator, fileHelper));
-        generator.addProvider(includeServer, new SMLootTableProvider(generator));
         generator.addProvider(includeServer, new SMAdvancementProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SMRecipeProvider(generator));
         SMDatapackRegistryProviders.registerDatapackProviders(fileHelper, generator, registryOps);

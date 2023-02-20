@@ -34,5 +34,4 @@ public class GlowwormsBlockStateProvider extends BlockStateProvider {
                 models().withExistingParent(GlowwormsDatagenUtil.name(block.get()), GlowwormsDatagenUtil.vanillaBlockLocation(GlowwormsDatagenUtil.CROSS)).renderType("tripwire")
                         .texture(GlowwormsDatagenUtil.CROSS, GlowwormsDatagenUtil.modBlockLocation(GlowwormsDatagenUtil.name(block.get())))).build(), GrowingPlantHeadBlock.AGE);
     }
-
 }
