@@ -7,6 +7,7 @@ import com.uraneptus.glowworms.core.registry.GlowwormsParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.GrowingPlantHeadBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class Glowworms extends GrowingPlantHeadBlock implements BonemealableBlock {
@@ -38,6 +40,11 @@ public class Glowworms extends GrowingPlantHeadBlock implements BonemealableBloc
                 pLevel.addParticle(GlowwormsParticleTypes.HANGING_GLOW_GOO.get(), d0, d1, d2, 0.0D, 0.0D, 0.0D);
             }
         }
+    }
+
+    @Override
+    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+        pEntity.makeStuckInBlock(pState, new Vec3(0.85D, 0.95F, 0.85D));
     }
 
     @Override
