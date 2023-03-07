@@ -26,7 +26,7 @@ public class GlowwormsBiomeModifiersProvider {
     private static final Map<ResourceLocation, BiomeModifier> ENTRIES = new HashMap<>();
 
     public static JsonCodecProvider<BiomeModifier> createBiomeModifiers(DataGenerator generator, ExistingFileHelper fileHelper) {
-        addFeatureModifier("glowworms", GlowwormsBiomeTags.GLOWWORMS_GENERATE_IN, GenerationStep.Decoration.VEGETAL_DECORATION);
+        //addFeatureModifier("glowworms", GlowwormsBiomeTags.GLOWWORMS_GENERATE_IN, GenerationStep.Decoration.VEGETAL_DECORATION);
 
         return JsonCodecProvider.forDatapackRegistry(generator, fileHelper, GlowwormsMod.MOD_ID,  RegistryOps.create(JsonOps.INSTANCE, GlowwormsDatagenUtil.REGISTRY_ACCESS), ForgeRegistries.Keys.BIOME_MODIFIERS, ENTRIES);
     }

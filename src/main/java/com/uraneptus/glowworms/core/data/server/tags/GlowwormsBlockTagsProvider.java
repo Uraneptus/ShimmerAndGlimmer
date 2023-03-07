@@ -18,12 +18,10 @@ public class GlowwormsBlockTagsProvider extends BlockTagsProvider {
     @Override
     public void addTags() {
         this.tag(GlowwormsBlockTags.GLOWWORMS).add(
-                GlowwormsBlocks.GLOWWORMS.get(),
-                GlowwormsBlocks.GLOWWORMS_PLANT.get()
+                GlowwormsBlocks.GLOWWORMS.get()
         );
         this.tag(GlowwormsBlockTags.GLOWWORMS_PLACEABLE)
                 .addTag(BlockTags.DIRT)
-                .addTag(BlockTags.BASE_STONE_OVERWORLD)
-                .addTag(GlowwormsBlockTags.GLOWWORMS);
+                .addTag(BlockTags.BASE_STONE_OVERWORLD);
     }
 }

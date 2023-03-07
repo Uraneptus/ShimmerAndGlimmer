@@ -1,7 +1,13 @@
 {
   "variants": {
-    "": {
-      "model": "glowworms:block/glowworms"
+    "glowworm_state=base": {
+      "model": "glowworms:block/glowworms_base"
+    },
+    "glowworm_state=end": {
+      "model": "glowworms:block/glowworms_end"
+    },
+    "glowworm_state=middle": {
+      "model": "glowworms:block/glowworms_middle"
     }
   }
 }

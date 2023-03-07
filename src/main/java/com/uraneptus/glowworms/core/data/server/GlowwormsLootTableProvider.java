@@ -47,7 +47,6 @@ public class GlowwormsLootTableProvider extends LootTableProvider {
         @Override
         protected void addTables() {
             this.dropSelf(GlowwormsBlocks.GLOWWORMS.get());
-            this.dropOther(GlowwormsBlocks.GLOWWORMS_PLANT.get(), GlowwormsItems.GLOWWORMS.get());
         }
 
         @Override

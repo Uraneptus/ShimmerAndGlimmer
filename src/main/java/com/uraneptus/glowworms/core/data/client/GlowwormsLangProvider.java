@@ -14,7 +14,6 @@ public class GlowwormsLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add(GlowwormsBlocks.GLOWWORMS.get(), "Glowworms");
-        add(GlowwormsBlocks.GLOWWORMS_PLANT.get(), "Glowworms Plant Block");
 
     }
 

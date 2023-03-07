@@ -1,6 +1,7 @@
 package com.uraneptus.glowworms.core.data.client;
 
 import com.uraneptus.glowworms.GlowwormsMod;
+import com.uraneptus.glowworms.common.blocks.GlowwormsBlock;
 import com.uraneptus.glowworms.core.data.GlowwormsDatagenUtil;
 import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import net.minecraft.data.DataGenerator;
@@ -20,8 +21,7 @@ public class GlowwormsBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        glowwormsBlocks(GlowwormsBlocks.GLOWWORMS);
-        glowwormsBlocks(GlowwormsBlocks.GLOWWORMS_PLANT);
+        glowwormsBlock(GlowwormsBlocks.GLOWWORMS);
 
     }
 
@@ -29,9 +29,16 @@ public class GlowwormsBlockStateProvider extends BlockStateProvider {
         simpleBlock(block.get());
     }
 
-    private void glowwormsBlocks(Supplier<? extends Block> block) {
-        getVariantBuilder(block.get()).forAllStatesExcept(blockState -> ConfiguredModel.builder().modelFile(
-                models().withExistingParent(GlowwormsDatagenUtil.name(block.get()), GlowwormsDatagenUtil.vanillaBlockLocation(GlowwormsDatagenUtil.CROSS)).renderType("tripwire")
-                        .texture(GlowwormsDatagenUtil.CROSS, GlowwormsDatagenUtil.modBlockLocation(GlowwormsDatagenUtil.name(block.get())))).build(), GrowingPlantHeadBlock.AGE);
+    private void glowwormsBlock(Supplier<? extends Block> block) {
+        getVariantBuilder(block.get()).forAllStatesExcept(blockState -> {
+            GlowwormsBlock.GlowwormState glowwormState = blockState.getValue(GlowwormsBlock.GLOWWORM_STATE);
+            String suffix = switch (glowwormState) {
+                case BASE, MIDDLE, END -> "_" + glowwormState;
+            };
+
+            return ConfiguredModel.builder().modelFile(
+                    models().withExistingParent(GlowwormsDatagenUtil.name(block.get()) + suffix, GlowwormsDatagenUtil.vanillaBlockLocation(GlowwormsDatagenUtil.CROSS)).renderType("tripwire")
+                            .texture(GlowwormsDatagenUtil.CROSS, GlowwormsDatagenUtil.modBlockLocation(GlowwormsDatagenUtil.name(block.get()) + suffix))).build();
+        }, GlowwormsBlock.AGE);
     }
 }

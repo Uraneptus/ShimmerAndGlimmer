@@ -21,7 +21,7 @@ public class GlowwormsItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        blockItemWithBlockTexture(GlowwormsBlocks.GLOWWORMS);
+        glowwormsItem(GlowwormsBlocks.GLOWWORMS);
     }
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {
@@ -38,5 +38,9 @@ public class GlowwormsItemModelProvider extends ItemModelProvider {
 
     private void blockItemWithItemTexture(Supplier<? extends Block> blockForItem) {
         basicItem(blockForItem.get().asItem());
+    }
+
+    private void glowwormsItem(Supplier<? extends Block> blockForItem) {
+        withExistingParent(name(blockForItem.get()), GENERATED).texture(LAYER0, modBlockLocation(name(blockForItem.get()) + "_end"));
     }
 }

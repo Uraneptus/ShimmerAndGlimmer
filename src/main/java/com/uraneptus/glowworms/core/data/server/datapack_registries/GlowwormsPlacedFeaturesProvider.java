@@ -25,7 +25,7 @@ public class GlowwormsPlacedFeaturesProvider {
     private static final Map<ResourceLocation, PlacedFeature> ENTRIES = new HashMap<>();
 
     public static JsonCodecProvider<PlacedFeature> createPlacedFeatures(DataGenerator generator, ExistingFileHelper fileHelper) {
-        addHangingCaveFeature("glowworms", 188);
+        //addHangingCaveFeature("glowworms", 188);
 
         return JsonCodecProvider.forDatapackRegistry(generator, fileHelper, GlowwormsMod.MOD_ID,  RegistryOps.create(JsonOps.INSTANCE, GlowwormsDatagenUtil.REGISTRY_ACCESS), Registry.PLACED_FEATURE_REGISTRY, ENTRIES);
     }

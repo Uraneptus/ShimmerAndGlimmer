@@ -1,7 +1,6 @@
 {
   "values": [
     "#minecraft:dirt",
-    "#minecraft:base_stone_overworld",
-    "#glowworms:glowworms"
+    "#minecraft:base_stone_overworld"
   ]
 }

@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#glowworms:glowworms_generate_in",
-  "features": "glowworms:glowworms",
-  "step": "vegetal_decoration"
-}
