@@ -17,6 +17,23 @@ public class GlowwormsBiomeTagsProvider extends BiomeTagsProvider {
 
     @Override
     protected void addTags() {
-        tag(GlowwormsBiomeTags.GLOWWORMS_GENERATE_IN).addTag(BiomeTags.IS_OVERWORLD);
+        tag(GlowwormsBiomeTags.IS_OVERWORLD_NO_CAVES)
+                .addTag(BiomeTags.IS_OCEAN)
+                .addTag(BiomeTags.IS_FOREST)
+                .addTag(BiomeTags.IS_SAVANNA)
+                .addTag(BiomeTags.IS_MOUNTAIN)
+                .addTag(BiomeTags.IS_BADLANDS)
+                .addTag(BiomeTags.IS_JUNGLE)
+                .addTag(BiomeTags.IS_BEACH)
+                .addTag(BiomeTags.IS_RIVER)
+                .addTag(BiomeTags.IS_HILL)
+                .addTag(BiomeTags.IS_TAIGA)
+                .addTag(Tags.Biomes.IS_SNOWY)
+                .addTag(Tags.Biomes.IS_PLAINS)
+                .addTag(Tags.Biomes.IS_SANDY)
+                .addTag(Tags.Biomes.IS_SWAMP)
+                .addTag(Tags.Biomes.IS_MUSHROOM);
+
+        tag(GlowwormsBiomeTags.GLOWWORMS_GENERATE_IN).addTag(GlowwormsBiomeTags.IS_OVERWORLD_NO_CAVES).add(Biomes.DEEP_DARK);
     }
 }

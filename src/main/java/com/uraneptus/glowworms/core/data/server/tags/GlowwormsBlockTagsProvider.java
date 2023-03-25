@@ -6,6 +6,7 @@ import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,6 +23,7 @@ public class GlowwormsBlockTagsProvider extends BlockTagsProvider {
         );
         this.tag(GlowwormsBlockTags.GLOWWORMS_PLACEABLE)
                 .addTag(BlockTags.DIRT)
-                .addTag(BlockTags.BASE_STONE_OVERWORLD);
+                .addTag(BlockTags.BASE_STONE_OVERWORLD)
+                .add(Blocks.SCULK);
     }
 }

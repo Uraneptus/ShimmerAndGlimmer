@@ -1,6 +1,7 @@
 package com.uraneptus.glowworms.common.blocks;
 
 import com.uraneptus.glowworms.core.other.tags.GlowwormsBlockTags;
+import com.uraneptus.glowworms.core.registry.GlowwormsBlocks;
 import com.uraneptus.glowworms.core.registry.GlowwormsItems;
 import com.uraneptus.glowworms.core.registry.GlowwormsParticleTypes;
 import net.minecraft.core.BlockPos;
@@ -30,15 +31,15 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+//TODO this can probably be improved a bit, especially for the bonemeal part
 public class GlowwormsBlock extends Block implements BonemealableBlock {
     public static final EnumProperty<GlowwormState> GLOWWORM_STATE = EnumProperty.create("glowworm_state", GlowwormState.class);
     public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
     public static final VoxelShape BASE_MIDDLE_SHAPE = Block.box(1.8D, 0.0D, 1.8D, 14.2D, 16.0D, 14.2D);
     public static final VoxelShape END_SHAPE = Block.box(1.8D, 6.0D, 1.8D, 14.2D, 16.0D, 14.2D);
-    protected static final Direction GROWTH_DIRECTION = Direction.DOWN;
 
     public GlowwormsBlock(Properties pProperties) {
-        super(pProperties.lightLevel((lightEmission) -> 8));
+        super(pProperties.lightLevel((lightEmission) -> 10));
         this.registerDefaultState(this.stateDefinition.any().setValue(GLOWWORM_STATE, GlowwormState.END).setValue(AGE, 0));
     }
 
@@ -103,7 +104,7 @@ public class GlowwormsBlock extends Block implements BonemealableBlock {
 
     @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        BlockPos blockpos = pPos.relative(GROWTH_DIRECTION);
+        BlockPos blockpos = pPos.relative(Direction.DOWN);
         BlockState blockstate = this.defaultBlockState().setValue(AGE, 0).setValue(GLOWWORM_STATE, GlowwormState.END);
         if (!this.isMaxAge(pState) && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, blockpos, pLevel.getBlockState(blockpos),pRandom.nextDouble() < 0.1D)) {
             if (pLevel.getBlockState(blockpos).isAir()) {
@@ -149,10 +150,9 @@ public class GlowwormsBlock extends Block implements BonemealableBlock {
         return !this.isMaxAge(state);
     }
 
-    //TODO Make this work correctly
     @Override
     public boolean isValidBonemealTarget(BlockGetter pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
-        return true;
+        return pLevel.getBlockState(pPos.relative(Direction.DOWN)).isAir();
     }
 
     @Override
@@ -162,12 +162,12 @@ public class GlowwormsBlock extends Block implements BonemealableBlock {
 
     @Override
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-        BlockPos blockpos = pPos.relative(GROWTH_DIRECTION);
+        BlockPos blockpos = pPos.relative(Direction.DOWN);
         int i = Math.min(pState.getValue(AGE) + Mth.nextInt(pRandom, 0, 2), 15);
 
         for(int k = 0; k < 1; ++k) {
             pLevel.setBlockAndUpdate(blockpos, this.defaultBlockState().setValue(AGE, i));
-            blockpos = blockpos.relative(GROWTH_DIRECTION);
+            blockpos = blockpos.relative(Direction.DOWN);
             i = Math.min(i + 1, 15);
         }
     }
