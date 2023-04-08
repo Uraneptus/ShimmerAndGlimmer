@@ -1,7 +1,10 @@
 package com.uraneptus.shimmerandglimmer.core.other;
 
+import com.uraneptus.shimmerandglimmer.common.blocks.GlowwormsBlock;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -10,7 +13,7 @@ import net.minecraft.world.level.material.Material;
 public class SAGProperties {
 
     public static final class Blocks {
-        public static final BlockBehaviour.Properties GLOWWORMS = BlockBehaviour.Properties.of(Material.PLANT).noOcclusion().noCollission().instabreak().sound(SoundType.WEEPING_VINES).emissiveRendering(net.minecraft.world.level.block.Blocks::always);
+        public static final BlockBehaviour.Properties GLOWWORMS = BlockBehaviour.Properties.of(Material.PLANT).lightLevel(GlowwormsBlock.LIGHT_LEVEL).randomTicks().noOcclusion().noCollission().instabreak().sound(SoundType.WEEPING_VINES).emissiveRendering(net.minecraft.world.level.block.Blocks::always);
 
     }
 

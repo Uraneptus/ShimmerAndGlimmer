@@ -29,15 +29,18 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.function.ToIntFunction;
+
 //TODO this can probably be improved a bit, especially for the bonemeal part
 public class GlowwormsBlock extends Block implements BonemealableBlock {
     public static final EnumProperty<GlowwormState> GLOWWORM_STATE = EnumProperty.create("glowworm_state", GlowwormState.class);
     public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
     public static final VoxelShape BASE_MIDDLE_SHAPE = Block.box(1.8D, 0.0D, 1.8D, 14.2D, 16.0D, 14.2D);
     public static final VoxelShape END_SHAPE = Block.box(1.8D, 6.0D, 1.8D, 14.2D, 16.0D, 14.2D);
+    public static final ToIntFunction<BlockState> LIGHT_LEVEL = blockState -> blockState.getValue(GLOWWORM_STATE) == GlowwormState.BASE ? 15 : 8;
 
     public GlowwormsBlock(Properties pProperties) {
-        super(pProperties.lightLevel((lightEmission) -> 10));
+        super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(GLOWWORM_STATE, GlowwormState.END).setValue(AGE, 0));
     }
 

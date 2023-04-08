@@ -13,6 +13,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class SAGBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ShimmerAndGlimmer.MOD_ID);
 
-    public static final RegistryObject<Block> GLOWWORMS = BLOCKS.register("glowworms", () -> new GlowwormsBlock(SAGProperties.Blocks.GLOWWORMS.randomTicks()));
+    public static final RegistryObject<Block> GLOWWORMS = BLOCKS.register("glowworms", () -> new GlowwormsBlock(SAGProperties.Blocks.GLOWWORMS));
 
 }
