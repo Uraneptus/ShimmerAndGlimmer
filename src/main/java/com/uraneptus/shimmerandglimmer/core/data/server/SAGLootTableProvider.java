@@ -40,6 +40,7 @@ public class SAGLootTableProvider extends LootTableProvider {
         @Override
         protected void addTables() {
             this.dropSelf(SAGBlocks.GLOWWORMS.get());
+            this.dropSelf(SAGBlocks.BIOLUMINESCENT_WOOL.get());
         }
 
         @Override

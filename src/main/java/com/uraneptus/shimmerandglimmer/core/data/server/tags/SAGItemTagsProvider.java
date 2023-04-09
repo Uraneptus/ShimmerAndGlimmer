@@ -1,6 +1,8 @@
 package com.uraneptus.shimmerandglimmer.core.data.server.tags;
 
 import com.uraneptus.shimmerandglimmer.ShimmerAndGlimmer;
+import com.uraneptus.shimmerandglimmer.core.other.tags.SAGItemTags;
+import com.uraneptus.shimmerandglimmer.core.registry.SAGItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -15,6 +17,7 @@ public class SAGItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
-
+        tag(SAGItemTags.DYES).addTag(SAGItemTags.BIOLUMINESCENT_DYE);
+        tag(SAGItemTags.BIOLUMINESCENT_DYE).add(SAGItems.BIOLUMINESCENT_DYE.get());
     }
 }

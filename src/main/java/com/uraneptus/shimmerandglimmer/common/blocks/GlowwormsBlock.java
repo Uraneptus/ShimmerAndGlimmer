@@ -37,7 +37,7 @@ public class GlowwormsBlock extends Block implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
     public static final VoxelShape BASE_MIDDLE_SHAPE = Block.box(1.8D, 0.0D, 1.8D, 14.2D, 16.0D, 14.2D);
     public static final VoxelShape END_SHAPE = Block.box(1.8D, 6.0D, 1.8D, 14.2D, 16.0D, 14.2D);
-    public static final ToIntFunction<BlockState> LIGHT_LEVEL = blockState -> blockState.getValue(GLOWWORM_STATE) == GlowwormState.BASE ? 15 : 8;
+    public static final ToIntFunction<BlockState> LIGHT_LEVEL = blockState -> blockState.getValue(GLOWWORM_STATE) == GlowwormState.BASE ? 12 : 3;
 
     public GlowwormsBlock(Properties pProperties) {
         super(pProperties);

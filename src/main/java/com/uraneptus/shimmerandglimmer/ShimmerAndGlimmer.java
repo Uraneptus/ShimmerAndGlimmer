@@ -10,6 +10,7 @@ import com.uraneptus.shimmerandglimmer.core.data.server.datapack_registries.SAGC
 import com.uraneptus.shimmerandglimmer.core.data.server.datapack_registries.SAGPlacedFeaturesProvider;
 import com.uraneptus.shimmerandglimmer.core.data.server.tags.SAGBiomeTagsProvider;
 import com.uraneptus.shimmerandglimmer.core.data.server.tags.SAGBlockTagsProvider;
+import com.uraneptus.shimmerandglimmer.core.data.server.tags.SAGItemTagsProvider;
 import com.uraneptus.shimmerandglimmer.core.registry.SAGBlocks;
 import com.uraneptus.shimmerandglimmer.core.registry.SAGItems;
 import com.uraneptus.shimmerandglimmer.core.registry.SAGParticleTypes;
@@ -64,6 +65,7 @@ public class ShimmerAndGlimmer {
 
         SAGBlockTagsProvider blockTagProvider = new SAGBlockTagsProvider(generator, fileHelper);
         generator.addProvider(includeServer, blockTagProvider);
+        generator.addProvider(includeServer, new SAGItemTagsProvider(generator, blockTagProvider, fileHelper));
         generator.addProvider(includeServer, new SAGBiomeTagsProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SAGLootTableProvider(generator));
         generator.addProvider(includeServer, SAGBiomeModifiersProvider.createBiomeModifiers(generator, fileHelper));
@@ -71,7 +73,6 @@ public class ShimmerAndGlimmer {
         generator.addProvider(includeServer, SAGPlacedFeaturesProvider.createPlacedFeatures(generator, fileHelper));
 
 /*
-        generator.addProvider(includeServer, new SMItemTagsProvider(generator, blockTagProvider, fileHelper));
         generator.addProvider(includeServer, new SMAdvancementProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SMRecipeProvider(generator));
         SMDatapackRegistryProviders.registerDatapackProviders(fileHelper, generator, registryOps);

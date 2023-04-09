@@ -1,6 +1,7 @@
 package com.uraneptus.shimmerandglimmer.core.registry;
 
 import com.uraneptus.shimmerandglimmer.ShimmerAndGlimmer;
+import com.uraneptus.shimmerandglimmer.common.blocks.BioluminescentWool;
 import com.uraneptus.shimmerandglimmer.common.blocks.GlowwormsBlock;
 import com.uraneptus.shimmerandglimmer.core.other.SAGProperties;
 import net.minecraft.world.level.block.Block;
@@ -14,5 +15,6 @@ public class SAGBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ShimmerAndGlimmer.MOD_ID);
 
     public static final RegistryObject<Block> GLOWWORMS = BLOCKS.register("glowworms", () -> new GlowwormsBlock(SAGProperties.Blocks.GLOWWORMS));
+    public static final RegistryObject<Block> BIOLUMINESCENT_WOOL = BLOCKS.register("bioluminescent_wool", () -> new BioluminescentWool(SAGProperties.Blocks.WOOL));
 
 }

@@ -21,6 +21,7 @@ public class SAGBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         glowwormsBlock(SAGBlocks.GLOWWORMS);
+        basicBlock(SAGBlocks.BIOLUMINESCENT_WOOL);
 
     }
 

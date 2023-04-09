@@ -2,6 +2,7 @@ package com.uraneptus.shimmerandglimmer.core.data.client;
 
 import com.uraneptus.shimmerandglimmer.ShimmerAndGlimmer;
 import com.uraneptus.shimmerandglimmer.core.registry.SAGBlocks;
+import com.uraneptus.shimmerandglimmer.core.registry.SAGItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +23,8 @@ public class SAGItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         glowwormsItem(SAGBlocks.GLOWWORMS);
+        basicItem(SAGItems.BIOLUMINESCENT_DYE);
+        basicBlockItem(SAGBlocks.BIOLUMINESCENT_WOOL);
     }
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {
