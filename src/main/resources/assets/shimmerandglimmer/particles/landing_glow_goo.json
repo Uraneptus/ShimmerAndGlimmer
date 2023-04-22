@@ -1,5 +1,8 @@
 {
   "textures": [
     "shimmerandglimmer:landing_glow_goo"
-  ]
+  ],
+  "shimmer": {
+    "effect": "bloom_unreal"
+  }
 }

@@ -1,6 +1,5 @@
 {
-  "parent": "minecraft:block/cross",
-  "render_type": "minecraft:tripwire",
+  "parent": "shimmerandglimmer:block/glowworms",
   "textures": {
     "cross": "shimmerandglimmer:block/glowworms_middle"
   }

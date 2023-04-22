@@ -17,6 +17,10 @@ public class SAGLangProvider extends LanguageProvider {
         add(SAGBlocks.GLOWWORMS.get(), "Glowworms");
         add(SAGItems.BIOLUMINESCENT_DYE.get(), "Bioluminescent Dye");
         add(SAGBlocks.BIOLUMINESCENT_WOOL.get(), "Bioluminescent Wool");
+        add(SAGBlocks.BIOLUMINESCENT_TERRACOTTA.get(), "Bioluminescent Terracotta");
+        add(SAGBlocks.BIOLUMINESCENT_CONCRETE.get(), "Bioluminescent Concrete");
+        add(SAGBlocks.BIOLUMINESCENT_CONCRETE_POWDER.get(), "Bioluminescent Concrete Powder");
+        add(SAGBlocks.BIOLUMINESCENT_STAINED_GLASS.get(), "Bioluminescent Stained Glass");
 
     }
 

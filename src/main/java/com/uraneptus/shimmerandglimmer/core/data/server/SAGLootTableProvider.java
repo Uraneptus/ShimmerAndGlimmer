@@ -41,6 +41,10 @@ public class SAGLootTableProvider extends LootTableProvider {
         protected void addTables() {
             this.dropSelf(SAGBlocks.GLOWWORMS.get());
             this.dropSelf(SAGBlocks.BIOLUMINESCENT_WOOL.get());
+            this.dropSelf(SAGBlocks.BIOLUMINESCENT_TERRACOTTA.get());
+            this.dropSelf(SAGBlocks.BIOLUMINESCENT_CONCRETE.get());
+            this.dropSelf(SAGBlocks.BIOLUMINESCENT_CONCRETE_POWDER.get());
+            this.dropWhenSilkTouch(SAGBlocks.BIOLUMINESCENT_STAINED_GLASS.get());
         }
 
         @Override

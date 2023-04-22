@@ -1,0 +1,11 @@
+{
+  "ColorReference": {
+    "bioluminescent": { "r": 80, "g": 255, "b": 199, "a": 200 }
+  },
+
+  "LightBlock": [
+    { "block": "shimmerandglimmer:glowworms", "state": { "glowworm_state": "base"}, "color": "#bioluminescent", "radius": 12 },
+    { "block": "shimmerandglimmer:glowworms", "state": { "glowworm_state": "middle"}, "color": "#bioluminescent", "radius": 3 },
+    { "block": "shimmerandglimmer:glowworms", "state": { "glowworm_state": "end"}, "color": "#bioluminescent", "radius": 3 }
+  ]
+}

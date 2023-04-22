@@ -8,6 +8,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.function.Supplier;
@@ -21,12 +22,30 @@ public class SAGBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         glowwormsBlock(SAGBlocks.GLOWWORMS);
-        basicBlock(SAGBlocks.BIOLUMINESCENT_WOOL);
+        basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_WOOL);
+        basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_TERRACOTTA);
+        basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_CONCRETE);
+        basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_CONCRETE_POWDER);
+        basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_STAINED_GLASS, "translucent");
 
     }
 
     private void basicBlock(Supplier<? extends Block> block) {
         simpleBlock(block.get());
+    }
+
+    private void basicBlockNoShade(Supplier<? extends Block> block) {
+        getVariantBuilder(block.get()).partialState().setModels(
+                new ConfiguredModel(models()
+                        .withExistingParent(SAGDatagenUtil.name(block.get()), SAGDatagenUtil.CUBE_NO_SHADE)
+                        .texture(SAGDatagenUtil.ALL, SAGDatagenUtil.modBlockLocation(SAGDatagenUtil.name(block.get())))));
+    }
+
+    private void basicBlockNoShade(Supplier<? extends Block> block, String renderType) {
+        getVariantBuilder(block.get()).partialState().setModels(
+                new ConfiguredModel(models()
+                        .withExistingParent(SAGDatagenUtil.name(block.get()), SAGDatagenUtil.CUBE_NO_SHADE)
+                        .texture(SAGDatagenUtil.ALL, SAGDatagenUtil.modBlockLocation(SAGDatagenUtil.name(block.get()))).renderType(renderType)));
     }
 
     private void glowwormsBlock(Supplier<? extends Block> block) {
@@ -37,7 +56,7 @@ public class SAGBlockStateProvider extends BlockStateProvider {
             };
 
             return ConfiguredModel.builder().modelFile(
-                    models().withExistingParent(SAGDatagenUtil.name(block.get()) + suffix, SAGDatagenUtil.vanillaBlockLocation(SAGDatagenUtil.CROSS)).renderType("tripwire")
+                    models().withExistingParent(SAGDatagenUtil.name(block.get()) + suffix, SAGDatagenUtil.GLOWWORMS)
                             .texture(SAGDatagenUtil.CROSS, SAGDatagenUtil.modBlockLocation(SAGDatagenUtil.name(block.get()) + suffix))).build();
         }, GlowwormsBlock.AGE);
     }

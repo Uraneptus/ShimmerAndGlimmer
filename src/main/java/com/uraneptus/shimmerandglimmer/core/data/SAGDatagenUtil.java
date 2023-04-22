@@ -19,9 +19,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class SAGDatagenUtil {
     public static final String LAYER0 = "layer0";
     public static final String CROSS = "cross";
+    public static final String ALL = "all";
     public static final ResourceLocation GENERATED = vanillaItemLocation("generated");
     public static final ResourceLocation HANDHELD = vanillaItemLocation("handheld");
     public static final ResourceLocation SPAWN_EGG = vanillaItemLocation("template_spawn_egg");
+    public static final ResourceLocation CUBE_NO_SHADE = modBlockLocation("cube_no_shade");
+    //This is the same as the regular cross parent, but this way it can be modified via ressourcepacks without modifying everything that is child of the cross model
+    public static final ResourceLocation GLOWWORMS = modBlockLocation("glowworms");
 
     public static final RegistryAccess REGISTRY_ACCESS = RegistryAccess.builtinCopy();
     public static final Registry<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE_REGISTRY = REGISTRY_ACCESS.registryOrThrow(Registry.CONFIGURED_FEATURE_REGISTRY);
