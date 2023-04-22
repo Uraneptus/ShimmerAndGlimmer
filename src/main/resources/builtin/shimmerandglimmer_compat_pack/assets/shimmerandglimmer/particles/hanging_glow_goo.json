@@ -1,0 +1,8 @@
+{
+  "textures": [
+    "minecraft:drip_hang"
+  ],
+  "shimmer": {
+    "effect": "bloom_unreal"
+  }
+}

@@ -1,8 +1,5 @@
 {
   "textures": [
     "minecraft:drip_fall"
-  ],
-  "shimmer": {
-    "effect": "bloom_unreal"
-  }
+  ]
 }
