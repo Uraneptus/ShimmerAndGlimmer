@@ -23,5 +23,6 @@ public class SAGItems {
     public static final RegistryObject<Item> BIOLUMINESCENT_CONCRETE = ITEMS.register("bioluminescent_concrete", () -> new FilledBlockItem(SAGBlocks.BIOLUMINESCENT_CONCRETE.get(), Items.BLACK_CONCRETE, SAGProperties.Items.BUILDING));
     public static final RegistryObject<Item> BIOLUMINESCENT_CONCRETE_POWDER = ITEMS.register("bioluminescent_concrete_powder", () -> new FilledBlockItem(SAGBlocks.BIOLUMINESCENT_CONCRETE_POWDER.get(), Items.BLACK_CONCRETE_POWDER, SAGProperties.Items.BUILDING));
     public static final RegistryObject<Item> BIOLUMINESCENT_STAINED_GLASS = ITEMS.register("bioluminescent_stained_glass", () -> new FilledBlockItem(SAGBlocks.BIOLUMINESCENT_STAINED_GLASS.get(), Items.BLACK_STAINED_GLASS, SAGProperties.Items.BUILDING));
+    public static final RegistryObject<Item> BIOLUMINESCENT_CANDLE = ITEMS.register("bioluminescent_candle", () -> new FilledBlockItem(SAGBlocks.BIOLUMINESCENT_CANDLE.get(), Items.BLACK_CANDLE, SAGProperties.Items.DECORATIONS));
 
 }

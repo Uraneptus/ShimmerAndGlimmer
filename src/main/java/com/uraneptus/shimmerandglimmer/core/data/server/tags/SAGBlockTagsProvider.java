@@ -25,5 +25,6 @@ public class SAGBlockTagsProvider extends BlockTagsProvider {
                 .addTag(BlockTags.DIRT)
                 .addTag(BlockTags.BASE_STONE_OVERWORLD)
                 .add(Blocks.SCULK);
+        this.tag(BlockTags.CANDLES).add(SAGBlocks.BIOLUMINESCENT_CANDLE.get());
     }
 }

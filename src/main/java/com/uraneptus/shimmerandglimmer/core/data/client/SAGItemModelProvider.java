@@ -24,6 +24,7 @@ public class SAGItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         glowwormsItem(SAGBlocks.GLOWWORMS);
         basicItem(SAGItems.BIOLUMINESCENT_DYE);
+        basicItem(SAGItems.BIOLUMINESCENT_CANDLE);
         basicBlockItem(SAGBlocks.BIOLUMINESCENT_WOOL);
         basicBlockItem(SAGBlocks.BIOLUMINESCENT_TERRACOTTA);
         basicBlockItem(SAGBlocks.BIOLUMINESCENT_CONCRETE);

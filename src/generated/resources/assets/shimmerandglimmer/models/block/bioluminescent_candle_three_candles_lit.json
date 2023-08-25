@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_three_candles",
+  "textures": {
+    "all": "shimmerandglimmer:block/bioluminescent_candle_lit",
+    "particle": "shimmerandglimmer:block/bioluminescent_candle_lit"
+  }
+}

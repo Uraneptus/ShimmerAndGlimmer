@@ -5,12 +5,17 @@ import com.uraneptus.shimmerandglimmer.common.blocks.GlowwormsBlock;
 import com.uraneptus.shimmerandglimmer.core.data.SAGDatagenUtil;
 import com.uraneptus.shimmerandglimmer.core.registry.SAGBlocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.function.Supplier;
+
+import static com.uraneptus.shimmerandglimmer.core.data.SAGDatagenUtil.*;
 
 @SuppressWarnings("SameParameterValue")
 public class SAGBlockStateProvider extends BlockStateProvider {
@@ -26,6 +31,7 @@ public class SAGBlockStateProvider extends BlockStateProvider {
         basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_CONCRETE);
         basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_CONCRETE_POWDER);
         basicBlockNoShade(SAGBlocks.BIOLUMINESCENT_STAINED_GLASS, "translucent");
+        candleBlock(SAGBlocks.BIOLUMINESCENT_CANDLE);
 
     }
 
@@ -58,5 +64,30 @@ public class SAGBlockStateProvider extends BlockStateProvider {
                     models().withExistingParent(SAGDatagenUtil.name(block.get()) + suffix, SAGDatagenUtil.GLOWWORMS)
                             .texture(SAGDatagenUtil.CROSS, SAGDatagenUtil.modBlockLocation(SAGDatagenUtil.name(block.get()) + suffix))).build();
         }, GlowwormsBlock.AGE);
+    }
+
+    private void candleBlock(Supplier<? extends Block> block) {
+        getVariantBuilder(block.get()).forAllStatesExcept(blockstate -> {
+            int candles = blockstate.getValue(BlockStateProperties.CANDLES);
+
+            String variants = switch (candles) {
+                case 1 -> "_one_candle";
+                case 2 -> "_two_candles";
+                case 3 -> "_three_candles";
+                case 4 -> "_four_candles";
+                default -> "";
+            };
+
+            String templatePath = "template" + (candles > 1 ? variants : "_candle");
+            String lit = blockstate.getValue(BlockStateProperties.LIT) ? "_lit" : "";
+            String filePath = modBlockLocation(name(block.get())) + variants + lit;
+            ResourceLocation texture = modBlockLocation(name(block.get()) + lit);
+
+            ModelFile modelFile = models().withExistingParent(filePath, vanillaBlockLocation(templatePath))
+                    .texture("all", texture)
+                    .texture("particle", texture);
+
+            return ConfiguredModel.builder().modelFile(modelFile).build();
+        }, BlockStateProperties.WATERLOGGED);
     }
 }

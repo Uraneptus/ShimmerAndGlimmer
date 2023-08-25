@@ -75,8 +75,6 @@ public class ShimmerAndGlimmer {
 /*
         generator.addProvider(includeServer, new SMAdvancementProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SMRecipeProvider(generator));
-        SMDatapackRegistryProviders.registerDatapackProviders(fileHelper, generator, registryOps);
-
  */
     }
 }

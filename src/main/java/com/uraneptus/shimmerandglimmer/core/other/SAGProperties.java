@@ -1,8 +1,11 @@
 package com.uraneptus.shimmerandglimmer.core.other;
 
 import com.uraneptus.shimmerandglimmer.common.blocks.GlowwormsBlock;
+import com.uraneptus.shimmerandglimmer.common.blocks.SAGCandleBlock;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -16,6 +19,7 @@ public class SAGProperties {
         public static final BlockBehaviour.Properties TERRACOTTA = BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.CYAN_TERRACOTTA).lightLevel(lightEmission -> 3).emissiveRendering((state, level, pos) -> true);
         public static final BlockBehaviour.Properties CONCRETE = BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.CYAN_CONCRETE).lightLevel(lightEmission -> 3).emissiveRendering((state, level, pos) -> true);
         public static final BlockBehaviour.Properties STAINED_GLASS = BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.CYAN_STAINED_GLASS).lightLevel(lightEmission -> 3).emissiveRendering((state, level, pos) -> true);
+        public static final BlockBehaviour.Properties CANDLE = BlockBehaviour.Properties.copy(net.minecraft.world.level.block.Blocks.CANDLE).lightLevel(SAGCandleBlock.LIGHT_EMISSION).emissiveRendering((state, level, pos) -> true);
 
     }
 

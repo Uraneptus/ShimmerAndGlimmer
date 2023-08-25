@@ -2,9 +2,11 @@ package com.uraneptus.shimmerandglimmer.core.registry;
 
 import com.uraneptus.shimmerandglimmer.ShimmerAndGlimmer;
 import com.uraneptus.shimmerandglimmer.common.blocks.GlowwormsBlock;
+import com.uraneptus.shimmerandglimmer.common.blocks.SAGCandleBlock;
 import com.uraneptus.shimmerandglimmer.common.blocks.SAGGlassBlock;
 import com.uraneptus.shimmerandglimmer.core.other.SAGProperties;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.ConcretePowderBlock;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,5 +23,6 @@ public class SAGBlocks {
     public static final RegistryObject<Block> BIOLUMINESCENT_CONCRETE = BLOCKS.register("bioluminescent_concrete", () -> new Block(SAGProperties.Blocks.CONCRETE));
     public static final RegistryObject<Block> BIOLUMINESCENT_CONCRETE_POWDER = BLOCKS.register("bioluminescent_concrete_powder", () -> new ConcretePowderBlock(BIOLUMINESCENT_CONCRETE.get(), SAGProperties.Blocks.CONCRETE));
     public static final RegistryObject<Block> BIOLUMINESCENT_STAINED_GLASS = BLOCKS.register("bioluminescent_stained_glass", () -> new SAGGlassBlock(SAGProperties.Blocks.STAINED_GLASS));
+    public static final RegistryObject<Block> BIOLUMINESCENT_CANDLE = BLOCKS.register("bioluminescent_candle", () -> new SAGCandleBlock(SAGProperties.Blocks.CANDLE));
 
 }

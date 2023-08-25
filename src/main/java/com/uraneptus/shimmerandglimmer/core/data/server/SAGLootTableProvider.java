@@ -44,6 +44,7 @@ public class SAGLootTableProvider extends LootTableProvider {
             this.dropSelf(SAGBlocks.BIOLUMINESCENT_TERRACOTTA.get());
             this.dropSelf(SAGBlocks.BIOLUMINESCENT_CONCRETE.get());
             this.dropSelf(SAGBlocks.BIOLUMINESCENT_CONCRETE_POWDER.get());
+            this.dropSelf(SAGBlocks.BIOLUMINESCENT_CANDLE.get());
             this.dropWhenSilkTouch(SAGBlocks.BIOLUMINESCENT_STAINED_GLASS.get());
         }
 
